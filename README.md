@@ -1,1 +1,3 @@
-# Prog_OrientadaObjetos26
+# Programación Orientada a Objetos
+## Nombre: Emilia E. Peña 
+## Ciclo 2
