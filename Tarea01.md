@@ -102,6 +102,19 @@ El sistema:
 - Emite un resumen de faltantes  
 - Imprime dos copias (constancia y factura)
 
+## Caso de uso: Comprar bebida
+
+| Elemento | Descripción |
+|----------|-------------|
+| ID | MACH-03 |
+| Caso de uso | Comprar bebida |
+| Actores | Cliente |
+| Propósito | Permitir al cliente comprar una bebida automáticamente |
+| Descripción | Flujo principal:<br>1. El cliente selecciona una bebida.<br>2. El sistema registra la selección.<br>3. Se verifica disponibilidad.<br>4. Se solicita el pago.<br>5. El cliente introduce monedas.<br>6. El sistema valida las monedas.<br>7. Se calcula el total.<br>8. Si es suficiente, se procesa la compra.<br>9. Se entrega el producto.<br>10. Se actualiza el stock.<br>11. Se imprime ticket. |
+| Precondiciones | - Máquina encendida<br>- Producto disponible |
+| Postcondiciones | - Producto entregado<br>- Stock actualizado<br>- Ticket generado |
+| Extensiones síncronas | - Sin stock → mensaje<br>- Pago insuficiente → devolución<br>- Moneda inválida → rechazo |
+
 ## Caso de uso: Reponer productos
 
 | Elemento | Descripción |
@@ -114,3 +127,5 @@ El sistema:
 | Precondiciones | - Encargado autorizado<br>- Sistema activo |
 | Postcondiciones | - Stock actualizado<br>- Reporte generado |
 | Extensiones síncronas | - Contraseña incorrecta → acceso denegado<br>- Error en datos → solicitar nuevamente |
+
+![Caso de uso 3](./Bebidas.png)
