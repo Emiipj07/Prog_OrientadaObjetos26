@@ -71,6 +71,8 @@ Hasta el día de hoy se han mantenido una serie de reuniones con el cliente con 
 | Postcondiciones | - Renta registrada<br>- Película no disponible |
 | Extensiones síncronas | - Cliente no registrado → registrar cliente<br>- Película no disponible → mostrar mensaje<br>- Cancelación → finalizar proceso |
 
+![Caso de uso2](./Pelicula.png)
+
 ## Problema 3: Modelado de máquina expendedora de bebidas
 
 ### Planteamiento
