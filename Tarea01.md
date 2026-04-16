@@ -28,6 +28,19 @@ Se desea modelar el proceso de:
 
 - Identifique casos de uso reutilizables que puedan ser incluidos en otros casos.
 
+## Caso de uso: Gestionar crédito
+
+| Elemento | Descripción |
+|----------|-------------|
+| ID | V-01 |
+| Caso de uso | Gestionar crédito para compra |
+| Actores | Cliente, Vendedor, Representante de créditos, Sistema bancario |
+| Propósito | Permitir solicitar, aprobar y pagar un crédito para comprar productos |
+| Descripción | 1. El cliente selecciona producto.<br>2. Solicita crédito al vendedor.<br>3. El vendedor registra la solicitud.<br>4. Se envía al representante.<br>5. Se evalúa el crédito.<br>6. Se aprueba el crédito.<br>7. Se registra en el sistema.<br>8. Se configura débito automático.<br>9. Se autoriza entrega.<br>10. Se entrega producto.<br>11. Se cobran cuotas mensuales automáticamente. |
+| Precondiciones | - Sistema activo<br>- Cliente con tarjeta válida<br>- Producto disponible |
+| Postcondiciones | - Crédito aprobado<br>- Producto entregado<br>- Pagos configurados |
+| Extensiones síncronas | - No se apueba el crédito. <br>- El cliente no está registrado. |
+
 ## Problema 2: Modelado de diagrama de casos de uso de una cadena de videoclubes
 
 ### Planteamiento
@@ -44,6 +57,19 @@ Hasta el día de hoy se han mantenido una serie de reuniones con el cliente con 
   Si registrando una renta, resulta que el cliente no se encuentra registrado, el sistema deberá permitir que se efectúe su alta.
 
 - El sistema deberá generar automáticamente un informe todas las mañanas a las 9:00 a.m. que muestre todos los clientes que se encuentran atrasados con sus devoluciones.
+
+## Caso de uso: Registrar renta de película
+
+| Elemento | Descripción |
+|----------|-------------|
+| ID | BB-02 |
+| Caso de uso | Registrar renta de película |
+| Actores | Empleado |
+| Propósito | Permitir registrar el préstamo de una película a un cliente |
+| Descripción | 1. El sistema solicita el ID del cliente.<br>2. El empleado ingresa los datos.<br>3. El sistema verifica si el cliente existe.<br>4. Si no existe, se solicita su registro.<br>5. El empleado registra al cliente.<br>6. El sistema muestra el catálogo.<br>7. El empleado selecciona la película.<br>8. El sistema verifica disponibilidad.<br>9. El empleado confirma la renta.<br>10. El sistema registra la renta.<br>11. Se actualiza el stock.<br>12. Se muestra confirmación. |
+| Precondiciones | - Sistema operativo<br>- Catálogo disponible<br>- Empleado autenticado |
+| Postcondiciones | - Renta registrada<br>- Película no disponible |
+| Extensiones síncronas | - Cliente no registrado → registrar cliente<br>- Película no disponible → mostrar mensaje<br>- Cancelación → finalizar proceso |
 
 ## Problema 3: Modelado de máquina expendedora de bebidas
 
@@ -73,3 +99,16 @@ El sistema:
 - Actualiza el stock  
 - Emite un resumen de faltantes  
 - Imprime dos copias (constancia y factura)
+
+## Caso de uso: Reponer productos
+
+| Elemento | Descripción |
+|----------|-------------|
+| ID | MACH-03 |
+| Caso de uso | Reponer productos |
+| Actores | Encargado |
+| Propósito | Permitir la reposición de productos en la máquina |
+| Descripción | 1. El encargado inicia sesión con contraseña.<br>2. El sistema valida acceso.<br>3. Se muestran productos con bajo stock.<br>4. Se selecciona producto.<br>5. Se ingresa cantidad.<br>6. Se actualiza stock.<br>7. Se genera reporte.<br>8. Se imprimen copias. |
+| Precondiciones | - Encargado autorizado<br>- Sistema activo |
+| Postcondiciones | - Stock actualizado<br>- Reporte generado |
+| Extensiones síncronas | - Contraseña incorrecta → acceso denegado<br>- Error en datos → solicitar nuevamente |
