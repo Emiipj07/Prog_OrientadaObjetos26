@@ -29,7 +29,7 @@
 | **Postcondiciones** | La venta queda registrada en el sistema. <br> Se genera un comprobante de pago para el cliente. <br> El carrito de compras se vacía tras el éxito de la operación. |
 | **Extensiones síncronas** | **Si el cliente desea Aplicar descuento:** El sistema valida el código antes de procesar el pago final. <br> **Si el pago es rechazado:** El sistema solicita un nuevo método de pago. <br> **Si el stock se agota durante el proceso:** El sistema notifica al cliente y actualiza el carrito. |
 
-![Tienda](./Tienda.drawio.png)
+
 
 ### 3. Sistema de chat
 
