@@ -59,6 +59,8 @@
 | **Postcondiciones** | La disponibilidad de la habitación se actualiza en tiempo real. <br> Se emite una confirmación de reserva o cancelación. |
 | **Extensiones sincrónicas** | **Si no hay disponibilidad:** El sistema ofrece fechas alternativas o tipos de habitación distintos. <br> **Si el Cliente desea Cancelar:** El sistema verifica si aplica penalización según la fecha. <br> **Si la garantía de pago falla:** La reserva queda en estado "pendiente" por tiempo limitado. |
 
+![Hotel](./Hotel.drawio.png)
+
 ### 5. Sistema Académico
 | Elemento | Descripción |
 | :--- | :--- |
