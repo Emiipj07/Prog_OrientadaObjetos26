@@ -121,6 +121,8 @@
 | **Postcondiciones** | El nuevo Miembro queda activo en el sistema. <br> El registro de entrada queda grabado con fecha y hora exacta. <br> Se actualiza el contador de aforo del gimnasio. |
 | **Extensiones sincrónicas** | **Si la membresía está vencida:** El sistema bloquea el acceso y notifica al Miembro. <br> **Si el Miembro ya está dentro:** El sistema genera una alerta por registro duplicado. <br> **Si no hay cupo en una clase específica:** El sistema ofrece anotarse en una lista de espera. |
 
+![Gym](./9.png)
+
 ### 10. Sistema de Turismo
 | Elemento | Descripción |
 | :--- | :--- |
@@ -132,3 +134,5 @@
 | **Precondiciones** | El destino seleccionado tiene cupos disponibles. <br> El Turista ha aceptado los términos y condiciones de cancelación. <br> La Pasarela de Pagos está integrada y operativa. |
 | **Postcondiciones** | El cupo del tour queda bloqueado para el Turista. <br> Se emite un comprobante fiscal y un itinerario digital. <br> El estado del tour cambia a "Reservado y Pagado". |
 | **Extensiones sincrónicas** | **Si el pago es rechazado:** La reserva no se confirma y el cupo se libera inmediatamente. <br> **Si no se recibe confirmación del operador:** El sistema pone la reserva en estado "Pendiente de validación". <br> **Si el Turista aplica un cupón:** El sistema recalcula el total antes de llamar al proceso de pago. |
+
+![Turismo](./10.png)
