@@ -44,6 +44,8 @@
 | **Postcondiciones** | El mensaje se almacena en el historial de chat de ambos usuarios. <br> El receptor visualiza el contenido del mensaje. <br> Se confirma la entrega al emisor. |
 | **Extensiones síncronas** | **Si se requiere Incluir notificaciones:** El sistema genera una alerta visual/sonora en el dispositivo del receptor al detectar un mensaje nuevo. <br> **Si el inicio de sesión falla:** El sistema solicita verificar credenciales. <br> **Si el mensaje no se puede enviar:** El sistema muestra un icono de error y permite reintentar. |
 
+![Chat](./3.png)
+
 ### 4. Sistema de reservas de hotel
 
 | Elemento | Descripción |
