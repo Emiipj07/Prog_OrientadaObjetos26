@@ -81,6 +81,8 @@
 | **Postcondiciones** | El saldo de la cuenta se actualiza en el sistema bancario. <br> Se emite un comprobante de la operación si el cliente lo solicita. <br> La tarjeta es devuelta al finalizar. |
 | **Extensiones sincrónicas** | **Si el PIN es incorrecto:** El sistema permite hasta 3 intentos antes de retener la tarjeta. <br> **Si no hay fondos suficientes:** El sistema notifica al cliente y cancela el retiro. <br> **Si hay falla de comunicación:** El sistema informa que no puede realizar la operación en ese momento. |
 
+![Cajero](./6.png)
+
 ### 7.  Sistema de Delivery
 | Elemento | Descripción |
 | :--- | :--- |
@@ -92,6 +94,8 @@
 | **Precondiciones** | El Cliente tiene una cuenta activa y dirección registrada. <br> El Restaurante está dentro de su horario de atención. <br> Hay repartidores activos en la zona. |
 | **Postcondiciones** | El Cliente recibe su comida. <br> El Restaurante y el Repartidor reciben el pago correspondiente. <br> El estado del pedido cambia a "Entregado". |
 | **Extensiones sincrónicas** | **Si el Restaurante rechaza el pedido:** Se notifica al Cliente y se realiza el reembolso automático. <br> **Si no se encuentra Repartidor:** El sistema informa al Cliente sobre el retraso o cancela la orden. <br> **Si el Cliente no se encuentra en el domicilio:** El Repartidor contacta al soporte para gestionar la devolución o espera. |
+
+![Delivery](./7.png)
 
 ### 8. Sistema de Gestión de Eventos
 | Elemento | Descripción |
