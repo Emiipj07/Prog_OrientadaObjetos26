@@ -15,3 +15,4 @@
 | Postcondiciones | - Préstamo registrado<br>- Libro marcado como no disponible |
 | Extensiones síncronas | - Usuario no registrado → registrar usuario<br>- Libro no disponible → mostrar mensaje |
 
+![Biblioteca](./Biblio.drawio.png)
