@@ -111,6 +111,8 @@
 | **Postcondiciones** | El ticket queda vinculado a la identidad del Cliente. <br> El stock de entradas disponibles se reduce automáticamente. <br> El Organizador recibe la notificación de la venta. |
 | **Extensiones sincrónicas** | **Si no hay tickets disponibles:** El sistema informa al Cliente y ofrece unirse a una lista de espera. <br> **Si el pago es rechazado:** El proceso de compra se detiene y se libera la reserva temporal del asiento. <br> **Si el evento es cancelado:** El sistema inicia automáticamente el proceso de reembolso a todos los compradores. |
 
+![Eventos](./8.png)
+
 ### 9. Sistema de Gimnasio
 | Elemento | Descripción |
 | :--- | :--- |
