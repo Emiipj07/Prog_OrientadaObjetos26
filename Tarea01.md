@@ -41,6 +41,8 @@ Se desea modelar el proceso de:
 | Postcondiciones | - Crédito aprobado<br>- Producto entregado<br>- Pagos configurados |
 | Extensiones síncronas | - No se apueba el crédito. <br>- El cliente no está registrado. |
 
+![Caso de uso 1](./Banco.png)
+
 ## Problema 2: Modelado de diagrama de casos de uso de una cadena de videoclubes
 
 ### Planteamiento
