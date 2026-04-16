@@ -71,6 +71,8 @@
 | **Postcondiciones** | Las notas quedan asentadas permanentemente en el historial académico. <br> El promedio final se recalcula automáticamente. |
 | **Extensiones sincrónicas** | **Si la nota es inválida (fuera de rango):** El sistema bloquea el guardado y solicita corregir el dato. <br> **Si el plazo de registro ha vencido:** El sistema deshabilita la opción de editar al docente. <br> **Si el Estudiante solicita revisión:** El sistema notifica al docente sobre la observación en la nota. |
 
+![SGA](./SGA.drawio.png)
+
 ### 6. Sistema de Cajero Automático
 | Elemento | Descripción |
 | :--- | :--- |
