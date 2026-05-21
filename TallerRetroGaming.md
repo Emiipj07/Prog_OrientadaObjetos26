@@ -275,19 +275,19 @@ Se utilizó `ObjectInputStream` para reconstruir los objetos desde el archivo.
 
 ## Captura 1: Inventario inicial
 
-*(Insertar captura aquí)*
+![Inventario1](Retrogaming1.png)
 
 ---
 
 ## Captura 2: Guardado exitoso
 
-*(Insertar captura aquí)*
+![Inventario2](Retrogaming2.png)
 
 ---
 
 ## Captura 3: Carga exitosa del archivo
 
-*(Insertar captura aquí)*
+![Inventario](Retrogaming3.png)
 
 ---
 
