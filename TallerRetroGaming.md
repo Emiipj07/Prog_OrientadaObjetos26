@@ -294,3 +294,4 @@ Se utilizó `ObjectInputStream` para reconstruir los objetos desde el archivo.
 # Archivo generado
 
 `inventario.dat`
+![archivo binario](Archivobinario.png)
