@@ -1,70 +1,69 @@
 # Herencia
 
-## Ejemplo: Estudiante y Becario
+![Herencia-info](Herencia-info.png)
 
-En este ejemplo, la clase `Becario` hereda los atributos y métodos de la clase `Estudiante`.
-
-### Clase Padre: Estudiante
+## Clase Padre: Persona
 
 ```java
-public class Estudiante {
-    protected String nombre;
+public class Persona {
 
-    public Estudiante(String nombre) {
+    String nombre;
+
+    public Persona(String nombre) {
         this.nombre = nombre;
     }
 
-    public void estudiar() {
-        System.out.println(nombre + " está estudiando");
+    public void saludar() {
+        System.out.println("Hola, soy " + nombre);
     }
 }
 ```
 
-### Clase Hija: Becario
+## Clase Hija: Estudiante
 
 ```java
-public class Becario extends Estudiante {
+public class Estudiante extends Persona {
 
-    public Becario(String nombre) {
+    public Estudiante(String nombre) {
         super(nombre);
     }
 
-    public void recibirBeca() {
-        System.out.println(nombre + " recibe una beca");
+    public void hacerTarea() {
+        System.out.println(nombre + " está haciendo la tarea");
     }
 }
 ```
 
-### Clase Principal
+## Clase Principal
 
 ```java
 public class Main {
+
     public static void main(String[] args) {
 
-        Becario alumno = new Becario("Ana");
+        Estudiante e = new Estudiante("María");
 
-        alumno.estudiar();      // Método heredado
-        alumno.recibirBeca();   // Método propio
+        e.saludar();
+        e.hacerTarea();
     }
 }
 ```
 
-### Salida
+## Salida
 
 ```text
-Ana está estudiando
-Ana recibe una beca
+Hola, soy María
+María está haciendo la tarea
 ```
 
 ## Explicación
 
-- `Estudiante` es la **clase padre**.
-- `Becario` es la **clase hija**.
-- La palabra clave `extends` permite la herencia.
-- `Becario` hereda el atributo `nombre`.
-- `Becario` hereda el método `estudiar()`.
-- `Becario` agrega su propio método `recibirBeca()`.
+- `Persona` es la clase padre.
+- `Estudiante` es la clase hija.
+- `Estudiante` hereda el atributo `nombre`.
+- `Estudiante` hereda el método `saludar()`.
+- `Estudiante` agrega el método `hacerTarea()`.
 
 ### Relación "es un"
 
-Un **Becario es un Estudiante**, por lo que puede heredar sus características y comportamientos.
+Un **Estudiante es una Persona**.
