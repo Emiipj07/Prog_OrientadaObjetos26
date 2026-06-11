@@ -133,3 +133,6 @@ La clase `Main` es el punto de entrada del programa.
 ![Clase ejecución](eje1.png)
 ![Clase ejecución](eje2.png)
 ![Clase ejecución](eje3.png)
+
+##Evaluación al grupo 9
+###Calificación: 9/10
