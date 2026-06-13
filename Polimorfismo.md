@@ -1,32 +1,30 @@
-# Polimorfismo en Java - Ejemplo de Animales
+# Polimorfismo 
 
-## Problema que resuelve
+![Polimorfismo](Polimorfismo_info.png)
 
-El polimorfismo permite que diferentes objetos respondan al mismo método de formas distintas.
+**Recuerda:** El polimorfismo permite que diferentes objetos respondan al mismo método de formas distintas.
 
-En este ejemplo todos los animales tienen el método `hacerSonido()`, pero cada uno produce un sonido diferente.
+## Ejemplo: 
+Todos los pokemones tienen el método `atacar()`, pero cada uno produce un ataque diferente.
 
-Además, se muestra:
-
-- Polimorfismo en tiempo de ejecución (sobreescritura).
-- Polimorfismo en tiempo de compilación (sobrecarga).
+![Pokemon](ejemploPokemon.png)
 
 ---
 
-# Clase Animal
+# Clase Pokemon
 
 ```java
-abstract class Animal {
+abstract class Pokemon {
 
-    public abstract void hacerSonido();
+    public abstract void atacar();
 
-    // Sobrecarga de métodos (polimorfismo en compilación)
+    // Polimorfismo en tiempo de compilación (sobrecarga)
     public void mostrarInfo() {
-        System.out.println("Animal registrado");
+        System.out.println("Pokemon registrado");
     }
 
     public void mostrarInfo(String nombre) {
-        System.out.println("Animal: " + nombre);
+        System.out.println("Pokemon: " + nombre);
     }
 }
 ```
