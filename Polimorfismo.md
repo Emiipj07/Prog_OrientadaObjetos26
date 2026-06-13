@@ -31,70 +31,56 @@ abstract class Pokemon {
 
 ---
 
-# Clase Perro
+# Clase Charizard
 
 ```java
-class Perro extends Animal {
+class Charizard extends Pokemon {
 
     @Override
-    public void hacerSonido() {
-        System.out.println("Guau");
+    public void atacar() {
+        System.out.println("Lanzallamas");
     }
 }
 ```
 
 ---
 
-# Clase Gato
+# Clase Blastoise
 
 ```java
-class Gato extends Animal {
+class Blastoise extends Pokemon {
 
     @Override
-    public void hacerSonido() {
-        System.out.println("Miau");
+    public void atacar() {
+        System.out.println("Hidrobomba");
     }
 }
 ```
 
 ---
 
-# Clase Pajaro
+# Clase Venosaur
 
 ```java
-class Pajaro extends Animal {
+class Venusaur extends Pokemon {
 
     @Override
-    public void hacerSonido() {
-        System.out.println("Pio");
+    public void atacar() {
+        System.out.println("Rayo Solar");
     }
 }
 ```
 
 ---
 
-# Clase Vaca
+# Clase Gengar
 
 ```java
-class Vaca extends Animal {
+class Gengar extends Pokemon {
 
     @Override
-    public void hacerSonido() {
-        System.out.println("Muu");
-    }
-}
-```
-
----
-
-# Clase Caballo
-
-```java
-class Caballo extends Animal {
-
-    @Override
-    public void hacerSonido() {
-        System.out.println("Hiii");
+    public void atacar() {
+        System.out.println("Bola Sombra");
     }
 }
 ```
@@ -108,24 +94,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Animal a1 = new Perro();
-        Animal a2 = new Gato();
-        Animal a3 = new Pajaro();
-        Animal a4 = new Vaca();
-        Animal a5 = new Caballo();
+        Pokemon p1 = new Pikachu();
+        Pokemon p2 = new Charizard();
+        Pokemon p3 = new Blastoise();
+        Pokemon p4 = new Venusaur();
+        Pokemon p5 = new Gengar();
 
-        System.out.println("=== Polimorfismo en tiempo de ejecucion ===");
+        System.out.println("=== POLIMORFISMO EN TIEMPO DE EJECUCION ===");
 
-        a1.hacerSonido();
-        a2.hacerSonido();
-        a3.hacerSonido();
-        a4.hacerSonido();
-        a5.hacerSonido();
+        p1.atacar();
+        p2.atacar();
+        p3.atacar();
+        p4.atacar();
+        p5.atacar();
 
-        System.out.println("\n=== Polimorfismo en tiempo de compilacion ===");
+        System.out.println("\n=== POLIMORFISMO EN TIEMPO DE COMPILACION ===");
 
-        a1.mostrarInfo();
-        a1.mostrarInfo("Perro");
+        p1.mostrarInfo();
+        p1.mostrarInfo("Pikachu");
     }
 }
 ```
