@@ -11,7 +11,7 @@ Todos los pokemones tienen el método `atacar()`, pero cada uno produce un ataqu
 
 ---
 
-# Clase Pokemon
+## Clase Pokemon
 
 ```java
 abstract class Pokemon {
@@ -28,10 +28,21 @@ abstract class Pokemon {
     }
 }
 ```
+## Clase Pikachu
+
+```java
+class Pikachu extends Pokemon {
+
+    @Override
+    public void atacar() {
+        System.out.println("Impactrueno");
+    }
+}
+```
 
 ---
 
-# Clase Charizard
+## Clase Charizard
 
 ```java
 class Charizard extends Pokemon {
@@ -90,7 +101,7 @@ class Gengar extends Pokemon {
 # Clase Main
 
 ```java
-public class Main {
+public class PokemonGo {
 
     public static void main(String[] args) {
 
@@ -118,7 +129,7 @@ public class Main {
 
 ---
 
-# ¿Dónde está el polimorfismo?
+# ¿Dónde encontramos el polimorfismo?
 
 ## 1. Polimorfismo en tiempo de compilación
 
@@ -140,10 +151,13 @@ El compilador decide cuál ejecutar.
 Se produce mediante la sobreescritura.
 
 ```java
-Animal a1 = new Perro();
-a1.hacerSonido();
+Pokemon p1 = new Pikachu();
+p1.atacar();
 ```
 
-Aunque la referencia es de tipo `Animal`, Java ejecuta el método de la clase real (`Perro`).
+Aunque la referencia es de tipo `Pokemon`, Java ejecuta el método de la clase real (`Pikachu`).
 
-Lo mismo ocurre con Gato, Pajaro, Vaca y Caballo.
+Lo mismo ocurre con Charizard, Blastoise, Venosaur y Gengar.
+
+### Resultado
+![Ejecución Pokemon](pokemonejec.png)
