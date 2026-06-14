@@ -70,7 +70,7 @@ class Blastoise extends Pokemon {
 
 ---
 
-# Clase Venosaur
+# Clase Venusaur
 
 ```java
 class Venusaur extends Pokemon {
