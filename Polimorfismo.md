@@ -14,7 +14,7 @@ Todos los pokemones tienen el método `atacar()`, pero cada uno produce un ataqu
 ## Clase Pokemon
 
 ```java
-abstract class Pokemon {
+public abstract class Pokemon {
 
     public abstract void atacar();
 
@@ -31,7 +31,7 @@ abstract class Pokemon {
 ## Clase Pikachu
 
 ```java
-class Pikachu extends Pokemon {
+public class Pikachu extends Pokemon {
 
     @Override
     public void atacar() {
@@ -45,7 +45,7 @@ class Pikachu extends Pokemon {
 ## Clase Charizard
 
 ```java
-class Charizard extends Pokemon {
+public class Charizard extends Pokemon {
 
     @Override
     public void atacar() {
@@ -59,7 +59,7 @@ class Charizard extends Pokemon {
 # Clase Blastoise
 
 ```java
-class Blastoise extends Pokemon {
+public class Blastoise extends Pokemon {
 
     @Override
     public void atacar() {
@@ -73,7 +73,7 @@ class Blastoise extends Pokemon {
 # Clase Venusaur
 
 ```java
-class Venusaur extends Pokemon {
+public class Venusaur extends Pokemon {
 
     @Override
     public void atacar() {
@@ -87,7 +87,7 @@ class Venusaur extends Pokemon {
 # Clase Gengar
 
 ```java
-class Gengar extends Pokemon {
+public class Gengar extends Pokemon {
 
     @Override
     public void atacar() {
