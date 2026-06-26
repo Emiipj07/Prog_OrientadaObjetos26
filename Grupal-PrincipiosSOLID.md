@@ -134,6 +134,7 @@ El programa sigue funcionando correctamente sin importar el tipo concreto del ob
 ### OCP (Open/Closed Principle)
 
 Si en el futuro se desea agregar una nueva clase como __Médico__ o __Comentarista__ solo es necesario crear una nueva clase que herede de Participante.
+
 ---
 
 # 3. Interfaces
@@ -192,15 +193,24 @@ Cada interfaz posee dos implementaciones.
 - ReportePDF
 - ReporteExcel
 
+![ReportPDF](reportePDF.png)
+![ReportExcel](reporteExcel.png)
+
 ## Notificacion
 
 - Correo
 - WhatsApp
 
+![Correo](reportePDF.png)
+![WhatsApp](WhatsApp.png)
+
 ## Persistencia
 
 - BaseDatos
 - Archivo
+
+![BaseDatos](BaseDatos.png)
+![Archivo](Archivo.png)
 
 Cada clase implementa únicamente los métodos definidos por su interfaz.
 
@@ -229,6 +239,9 @@ El resto del sistema continúa funcionando sin modificaciones.
 # 5. Clase GestorMundial
 
 Es la clase principal del sistema.
+
+![Gestor Mundial](GestM.png)
+![Gestor Mundial](GestM1.png)
 
 Se encarga de:
 
@@ -288,9 +301,9 @@ Gracias a esto es posible cambiar ReportePDF por ReporteExcel sin modificar Gest
 
 ---
 
-# 6. Clase Main
+# 6. Clase Principal
 
-Main es el punto de inicio del programa.
+![Main](Main.png)
 
 Aquí ocurre toda la ejecución.
 
@@ -338,17 +351,9 @@ Finalmente se ejecutan las acciones del sistema.
 
 ---
 
-# Flujo de Ejecución
+# Ejecución
 
-1. Inicia Main.
-2. Se crean las implementaciones de Reporte, Notificacion y Persistencia.
-3. Se crea GestorMundial.
-4. Se crean los participantes.
-5. Se registran en la lista.
-6. Se muestran todos los participantes.
-7. Se genera un reporte.
-8. Se envía una notificación.
-9. Se guarda la información.
+![Run](Ejecucion.png)
 
 ---
 
