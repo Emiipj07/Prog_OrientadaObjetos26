@@ -9,7 +9,7 @@
 - Notificaciones
 - Almacenamiento de información
 ## Diagrama UML
-![DiagramaUML](.png)
+![DiagramaUML](UML-Mundial.png)
 
 ## Código 
 ```java
