@@ -42,9 +42,9 @@ El proyecto está formado por las siguientes clases e interfaces:
 
 ## 1. Clase Participante
 
-Es la clase padre del sistema.
+![Participante](Participante.png)
 
-Contiene los atributos comunes que poseen todos los participantes del Mundial.
+Es la clase padre del sistema. Contiene los atributos comunes que poseen todos los participantes del Mundial.
 
 ```java
 private int id;
@@ -52,13 +52,11 @@ private String nombre;
 private String nacionalidad;
 ```
 
-También posee los métodos getters y el método:
+También posee los métodos getters y el método que imprime la información básica del participante:
 
 ```java
 mostrarInfo()
 ```
-
-que imprime la información básica del participante.
 
 ### Encapsulamiento
 
@@ -70,23 +68,16 @@ Esto impide que otras clases modifiquen directamente los datos y obliga a utiliz
 
 ## SRP (Single Responsibility Principle)
 
-La única responsabilidad de esta clase es representar un participante.
-
-No genera reportes.
-
-No envía notificaciones.
-
-No guarda archivos.
-
-Solo administra los datos del participante.
+La única responsabilidad de esta clase es representar un participante. Solo administra los datos del participante.
 
 ---
 
 # 2. Clases Jugador, Entrenador y Arbitro
+![Clase1](jugador.png)
+![Clase2](entrenador.png)
+![Clase3](arbitro.png)
 
-Estas clases heredan de Participante.
-
-Cada una agrega un atributo propio.
+Estas clases heredan de Participante. Cada una agrega un atributo propio.
 
 Jugador
 
@@ -106,19 +97,15 @@ Arbitro
 private String categoria;
 ```
 
-Cada clase sobrescribe el método
+Cada clase sobrescribe el método para mostrar también su información específica.
 
 ```java
 mostrarInfo()
 ```
 
-para mostrar también su información específica.
-
 ### Herencia
 
-Estas clases reutilizan todos los atributos y métodos de Participante.
-
-Gracias a ello no es necesario repetir código.
+Estas clases reutilizan todos los atributos y métodos de Participante. Gracias a ello no es necesario repetir código.
 
 ### Polimorfismo
 
@@ -130,13 +117,11 @@ Ejemplo:
 Participante jugador = new Jugador(...);
 ```
 
-Cuando se llama
+Cuando se llama a este método Java ejecuta automáticamente el método correspondiente al objeto real.
 
 ```java
 jugador.mostrarInfo();
 ```
-
-Java ejecuta automáticamente el método correspondiente al objeto real.
 
 ### Principios SOLID
 
@@ -148,22 +133,7 @@ El programa sigue funcionando correctamente sin importar el tipo concreto del ob
 
 ### OCP (Open/Closed Principle)
 
-Si en el futuro se desea agregar una nueva clase como:
-
-```java
-Medico
-```
-
-o
-
-```java
-Comentarista
-```
-
-solo es necesario crear una nueva clase que herede de Participante.
-
-No es necesario modificar el código existente.
-
+Si en el futuro se desea agregar una nueva clase como __Médico__ o __Comentarista__ solo es necesario crear una nueva clase que herede de Participante.
 ---
 
 # 3. Interfaces
@@ -172,9 +142,7 @@ El proyecto utiliza tres interfaces.
 
 ## Reporte
 
-```java
-public interface Reporte
-```
+![Reporte](reporte.png)
 
 Define el método
 
@@ -186,9 +154,7 @@ generarReporte()
 
 ## Notificacion
 
-```java
-public interface Notificacion
-```
+![Notificacion](Notificacion.png)
 
 Define el método
 
@@ -199,10 +165,7 @@ enviar()
 ---
 
 ## Persistencia
-
-```java
-public interface Persistencia
-```
+![Persistencia](persistencia.png)
 
 Define el método
 
@@ -214,9 +177,7 @@ guardar()
 
 ## ISP (Interface Segregation Principle)
 
-Cada interfaz tiene una única función.
-
-Una clase solo implementa la interfaz que necesita.
+Cada interfaz tiene una única función. Una clase solo implementa la interfaz que necesita.
 
 Esto evita crear interfaces demasiado grandes con métodos innecesarios.
 
