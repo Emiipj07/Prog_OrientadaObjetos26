@@ -11,111 +11,434 @@
 ## Diagrama UML
 ![DiagramaUML](UML-Mundial.png)
 
-## Código 
+# Estructura del Proyecto
+
+El proyecto está formado por las siguientes clases e interfaces:
+
+## Clases
+
+- Participante
+- Jugador
+- Entrenador
+- Arbitro
+- ReportePDF
+- ReporteExcel
+- Correo
+- WhatsApp
+- BaseDatos
+- Archivo
+- GestorMundial
+- Main
+
+## Interfaces
+
+- Reporte
+- Notificacion
+- Persistencia
+
+---
+
+# Explicación del Código
+
+## 1. Clase Participante
+
+Es la clase padre del sistema.
+
+Contiene los atributos comunes que poseen todos los participantes del Mundial.
+
 ```java
-package mundialsolid;
-
-public class Participante {
-    private int id;
-    private String nombre;
-    private String nacionalidad;
-
-    public Participante(int id, String nombre, String nacionalidad) {
-        this.id = id;
-        this.nombre = nombre;
-        this.nacionalidad = nacionalidad;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getNacionalidad() {
-        return nacionalidad;
-    }
-
-    public void mostrarInfo() {
-        System.out.println("ID: " + id);
-        System.out.println("Nombre: " + nombre);
-        System.out.println("Nacionalidad: " + nacionalidad);
-    }
-}
+private int id;
+private String nombre;
+private String nacionalidad;
 ```
-### Clase participante 
-La clase Participante funciona como una plantilla estructurada para modelar de forma segura a cualquier integrante del mundial mediante el uso de encapsulamiento, protegiendo sus datos (id, nombre y nacionalidad) bajo atributos privados que solo se pueden asignar al crear el objeto mediante su constructor y leerse de forma externa a través de métodos getters de solo lectura; además, cumple con el Principio de Responsabilidad Única (SRP) al encargarse exclusivamente de almacenar esta información y ofrecer el método mostrarInfo para imprimir su propio estado en consola, delegando cualquier otra lógica del 
-torneo a clases externas.
 
-### La clase participante hereda 
-## Jugador
-## Codigo
+También posee los métodos getters y el método:
+
 ```java
-package mundialsolid;
-
-public class Jugador extends Participante {
-    private String posicion;
-
-    public Jugador(int id, String nombre, String nacionalidad, String posicion) {
-        super(id, nombre, nacionalidad);
-        this.posicion = posicion;
-    }
-
-    @Override
-    public void mostrarInfo() {
-        super.mostrarInfo();
-        System.out.println("Posición: " + posicion);
-    }
-}
+mostrarInfo()
 ```
-La clase Jugador hereda todos los atributos y métodos de la clase Participante aplicando el concepto de herencia en programación orientada a objetos, lo que le permite reutilizar la lógica de id, nombre y nacionalidad sin tener que duplicar código. Esta subclase añade un atributo privado propio llamado posicion para guardar el rol específico del futbolista en la cancha, el cual se inicializa en su constructor llamando primero al constructor de la clase padre mediante la instrucción super. Además, implementa el polimorfismo al sobrescribir el método mostrarInfo con la anotación Override, logrando que primero se ejecute la impresión de los datos generales del participante y luego se complemente de forma automática imprimiendo la posición en la consola.
 
-### La clase participante hereda 
-## Entrenador
-## Codigo
+que imprime la información básica del participante.
+
+### Encapsulamiento
+
+Los atributos son privados.
+
+Esto impide que otras clases modifiquen directamente los datos y obliga a utilizar métodos para acceder a ellos.
+
+### Principio SOLID aplicado
+
+## SRP (Single Responsibility Principle)
+
+La única responsabilidad de esta clase es representar un participante.
+
+No genera reportes.
+
+No envía notificaciones.
+
+No guarda archivos.
+
+Solo administra los datos del participante.
+
+---
+
+# 2. Clases Jugador, Entrenador y Arbitro
+
+Estas clases heredan de Participante.
+
+Cada una agrega un atributo propio.
+
+Jugador
+
 ```java
-package mundialsolid;
-
-public class Entrenador extends Participante {
-
-    private String especialidad;
-
-    public Entrenador(int id, String nombre, String nacionalidad, String especialidad) {
-        super(id, nombre, nacionalidad);
-        this.especialidad = especialidad;
-    }
-
-    @Override
-    public void mostrarInfo() {
-        super.mostrarInfo();
-        System.out.println("Especialidad: " + especialidad);
-    }
-}
+private String posicion;
 ```
-La clase Entrenador hereda todos los atributos y comportamientos de la clase Participante mediante el concepto de herencia, lo que permite reutilizar limpiamente la lógica de id, nombre y nacionalidad sin repetir código. Esta subclase extiende la funcionalidad original al añadir un atributo privado específico llamado especialidad para almacenar el enfoque táctico o técnico del director técnico, el cual se inicializa en el constructor invocando primero al constructor de la clase base con la instrucción super. Asimismo, aplica el polimorfismo al sobrescribir el método mostrarInfo utilizando la anotación Override, lo que permite que al llamarse este método primero se imprima la información general del participante y de inmediato se complemente mostrando la especialidad en la consola.
 
-### La clase participante hereda 
-## Arbitro
-## Codigo
+Entrenador
+
 ```java
-package mundialsolid;
-
-public class Arbitro extends Participante {
-
-    private String categoria;
-
-    public Arbitro(int id, String nombre, String nacionalidad, String categoria) {
-        super(id, nombre, nacionalidad);
-        this.categoria = categoria;
-    }
-
-    @Override
-    public void mostrarInfo() {
-        super.mostrarInfo();
-        System.out.println("Categoría: " + categoria);
-    }
-}
+private String especialidad;
 ```
-La clase Arbitro extiende a la clase Participante a través del mecanismo de herencia, lo que le permite adoptar y reutilizar de manera automática los campos de id, nombre y nacionalidad sin necesidad de volver a escribirlos. Esta subclase introduce un campo privado propio denominado categoria para registrar el nivel o rango del colegiado en el torneo, asignando su valor en el constructor tras delegar la inicialización de los datos básicos al constructor padre mediante la palabra clave super. Finalmente, implementa el polimorfismo al rediseñar el comportamiento del método mostrarInfo con la anotación Override, logrando que el sistema imprima primero los datos generales heredados y añada al final la línea específica con la categoría del árbitro en la consola.
+
+Arbitro
+
+```java
+private String categoria;
+```
+
+Cada clase sobrescribe el método
+
+```java
+mostrarInfo()
+```
+
+para mostrar también su información específica.
+
+### Herencia
+
+Estas clases reutilizan todos los atributos y métodos de Participante.
+
+Gracias a ello no es necesario repetir código.
+
+### Polimorfismo
+
+Aunque una variable sea de tipo Participante, puede almacenar un Jugador, un Entrenador o un Arbitro.
+
+Ejemplo:
+
+```java
+Participante jugador = new Jugador(...);
+```
+
+Cuando se llama
+
+```java
+jugador.mostrarInfo();
+```
+
+Java ejecuta automáticamente el método correspondiente al objeto real.
+
+### Principios SOLID
+
+### LSP (Liskov Substitution Principle)
+
+Cualquier Jugador, Entrenador o Arbitro puede utilizarse donde se espere un Participante.
+
+El programa sigue funcionando correctamente sin importar el tipo concreto del objeto.
+
+### OCP (Open/Closed Principle)
+
+Si en el futuro se desea agregar una nueva clase como:
+
+```java
+Medico
+```
+
+o
+
+```java
+Comentarista
+```
+
+solo es necesario crear una nueva clase que herede de Participante.
+
+No es necesario modificar el código existente.
+
+---
+
+# 3. Interfaces
+
+El proyecto utiliza tres interfaces.
+
+## Reporte
+
+```java
+public interface Reporte
+```
+
+Define el método
+
+```java
+generarReporte()
+```
+
+---
+
+## Notificacion
+
+```java
+public interface Notificacion
+```
+
+Define el método
+
+```java
+enviar()
+```
+
+---
+
+## Persistencia
+
+```java
+public interface Persistencia
+```
+
+Define el método
+
+```java
+guardar()
+```
+
+### Principio SOLID
+
+## ISP (Interface Segregation Principle)
+
+Cada interfaz tiene una única función.
+
+Una clase solo implementa la interfaz que necesita.
+
+Esto evita crear interfaces demasiado grandes con métodos innecesarios.
+
+---
+
+# 4. Implementaciones
+
+Cada interfaz posee dos implementaciones.
+
+## Reporte
+
+- ReportePDF
+- ReporteExcel
+
+## Notificacion
+
+- Correo
+- WhatsApp
+
+## Persistencia
+
+- BaseDatos
+- Archivo
+
+Cada clase implementa únicamente los métodos definidos por su interfaz.
+
+Ejemplo:
+
+```java
+public class ReportePDF implements Reporte
+```
+
+### Principio SOLID
+
+## OCP
+
+Si se desea agregar
+
+- ReporteWord
+- Telegram
+- Nube
+
+solo se crea una nueva clase.
+
+El resto del sistema continúa funcionando sin modificaciones.
+
+---
+
+# 5. Clase GestorMundial
+
+Es la clase principal del sistema.
+
+Se encarga de:
+
+- Registrar participantes.
+- Mostrar participantes.
+- Generar reportes.
+- Enviar notificaciones.
+- Guardar información.
+
+Internamente posee una lista:
+
+```java
+ArrayList<Participante>
+```
+
+donde se almacenan todos los participantes registrados.
+
+---
+
+## Dependency Injection
+
+El constructor recibe:
+
+```java
+Reporte
+
+Notificacion
+
+Persistencia
+```
+
+No crea estos objetos dentro de la clase.
+
+Simplemente los recibe.
+
+---
+
+## Principio SOLID
+
+### DIP (Dependency Inversion Principle)
+
+GestorMundial depende de interfaces y no de clases concretas.
+
+Correcto
+
+```java
+Reporte reporte = new ReportePDF();
+```
+
+Incorrecto
+
+```java
+ReportePDF reporte = new ReportePDF();
+```
+
+Gracias a esto es posible cambiar ReportePDF por ReporteExcel sin modificar GestorMundial.
+
+---
+
+# 6. Clase Main
+
+Main es el punto de inicio del programa.
+
+Aquí ocurre toda la ejecución.
+
+Primero se crean las implementaciones.
+
+```java
+Reporte reporte = new ReportePDF();
+
+Notificacion notificacion = new Correo();
+
+Persistencia persistencia = new BaseDatos();
+```
+
+Después se crea el gestor.
+
+```java
+GestorMundial gestor =
+new GestorMundial(reporte,
+notificacion,
+persistencia);
+```
+
+Luego se crean los participantes.
+
+```java
+Jugador
+
+Entrenador
+
+Arbitro
+```
+
+Se registran mediante
+
+```java
+registrarParticipante()
+```
+
+Finalmente se ejecutan las acciones del sistema.
+
+- Mostrar participantes.
+- Generar reporte.
+- Enviar notificación.
+- Guardar información.
+
+---
+
+# Flujo de Ejecución
+
+1. Inicia Main.
+2. Se crean las implementaciones de Reporte, Notificacion y Persistencia.
+3. Se crea GestorMundial.
+4. Se crean los participantes.
+5. Se registran en la lista.
+6. Se muestran todos los participantes.
+7. Se genera un reporte.
+8. Se envía una notificación.
+9. Se guarda la información.
+
+---
+
+# Aplicación de los Principios SOLID
+
+## SRP
+
+Cada clase posee una única responsabilidad.
+
+Ejemplos:
+
+- Participante almacena datos.
+- ReportePDF genera reportes.
+- Correo envía mensajes.
+- BaseDatos guarda información.
+
+---
+
+## OCP
+
+El sistema permite agregar nuevas funcionalidades sin modificar el código existente.
+
+Ejemplos:
+
+- ReporteWord
+- Telegram
+- Medico
+
+---
+
+## LSP
+
+Jugador, Entrenador y Arbitro pueden reemplazar a Participante sin producir errores.
+
+---
+
+## ISP
+
+Las interfaces son pequeñas y específicas.
+
+- Reporte
+- Notificacion
+- Persistencia
+
+---
+
+## DIP
+
+GestorMundial depende de interfaces y no de implementaciones concretas.
+
+Esto hace que el sistema sea flexible y fácil de mantener.
+
+---
+
