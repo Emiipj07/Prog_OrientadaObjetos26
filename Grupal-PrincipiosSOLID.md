@@ -201,7 +201,7 @@ Cada interfaz posee dos implementaciones.
 - Correo
 - WhatsApp
 
-![Correo](reportePDF.png)
+![Correo](Correo.png)
 ![WhatsApp](WhatsApp.png)
 
 ## Persistencia
